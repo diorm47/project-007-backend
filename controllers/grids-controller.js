@@ -14,7 +14,7 @@ export const getAll = async (req, res) => {
 export const getOne = async (req, res) => {
   try {
     const gridId = req.params.id;
-    const doc = await GridsModel.findById(gridId);
+    const doc = await GridsModel.findById(gridId).populate("user");
 
     if (!doc) {
       return res.status(404).json({
