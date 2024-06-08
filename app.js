@@ -12,12 +12,11 @@ import {
   registerValidation,
 } from "./validations/validations.js";
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
+// mongodb+srv://oblivion:acdc2004@cluster0.gp6ufjo.mongodb.net/matchmove
 mongoose
-  .connect(
-    "mongodb+srv://oblivion:acdc2004@cluster0.gp6ufjo.mongodb.net/matchmove"
-  )
+  .connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("db ok");
   })
