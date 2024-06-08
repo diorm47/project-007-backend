@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { validationResult } from "express-validator";
-import UserModel from "../modules/users.js";
+import UserModel from "../models/users.js";
 
 export const register = async (req, res) => {
   try {
@@ -101,9 +101,6 @@ export const me = async (req, res) => {
 
     res.json({
       userData,
-    });
-    res.json({
-      success: true,
     });
   } catch (err) {
     console.log(err);
