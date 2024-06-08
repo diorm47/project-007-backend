@@ -14,7 +14,6 @@ import {
 
 const PORT = process.env.PORT || 3001;
 
-//
 const db_uri =
   process.env.MONGODB_URI ||
   "mongodb+srv://oblivion:acdc2004@cluster0.gp6ufjo.mongodb.net/matchmove";
