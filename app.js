@@ -14,11 +14,10 @@ import {
 
 const PORT = process.env.PORT || 3001;
 
-const db_uri =
-  process.env.MONGODB_URI ||
-  "mongodb+srv://oblivion:acdc2004@cluster0.gp6ufjo.mongodb.net/matchmove";
 mongoose
-  .connect(db_uri)
+  .connect(
+    "mongodb+srv://oblivion:acdc2004@cluster0.gp6ufjo.mongodb.net/matchmove"
+  )
   .then(() => {
     console.log("db ok");
   })
