@@ -12,7 +12,7 @@ import {
   registerValidation,
 } from "./validations/validations.js";
 
-const PORT = process.env.PORT || 3001;
+// const PORT = process.env.PORT || 3001;
 
 mongoose
   .connect(
@@ -62,6 +62,12 @@ app.post(
   UserController.register
 );
 app.get("/me", checkAuth, UserController.me);
+app.post(
+  "/update",
+  checkAuth,
+  handleValidationError,
+  UserController.updateProfile
+);
 
 // Grids CRUD
 app.get("/grids", GridsController.getAll);
@@ -82,7 +88,11 @@ app.patch(
   GridsController.update
 );
 
-app.listen(PORT, (err) => {
+// get users/user
+app.get("/users", UserController.getUsers);
+app.get("/user/:id", UserController.getUserById);
+
+app.listen(3001, (err) => {
   if (err) {
     return console.log(err);
   }

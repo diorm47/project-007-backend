@@ -16,6 +16,43 @@ const UserSchema = new mongoose.Schema(
       required: true,
     },
     avatarUrl: String,
+    website: {
+      type: String,
+      required: false,
+    },
+    portfolio: {
+      type: String,
+      required: false,
+    },
+    about_me: {
+      type: String,
+      required: false,
+    },
+
+    facebook: {
+      type: String,
+      required: false,
+    },
+    twitter: {
+      type: String,
+      required: false,
+    },
+    whatsapp: {
+      type: String,
+      required: false,
+    },
+    telegram: {
+      type: String,
+      required: false,
+    },
+    messenger: {
+      type: String,
+      required: false,
+    },
+    linkedin: {
+      type: String,
+      required: false,
+    },
   },
   { timestamp: true }
 );
