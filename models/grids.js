@@ -19,6 +19,10 @@ const GridSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+    file: {
+      type: String,
+      required: true,
+    },
   },
   { timestamp: true }
 );

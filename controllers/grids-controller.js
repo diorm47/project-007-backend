@@ -38,6 +38,7 @@ export const create = async (req, res) => {
       camera_manufacturer: req.body.camera_manufacturer,
       lens_model: req.body.lens_model,
       user: req.userId,
+      file: req.body.file
     });
 
     const grid = await doc.save();

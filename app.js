@@ -44,6 +44,11 @@ app.post("/upload", checkAuth, upload.single("image"), (req, res) => {
     url: `/uploads/${req.file.originalname}`,
   });
 });
+app.post("/file", checkAuth, upload.single("file"), (req, res) => {
+  res.json({
+    url: `/uploads/${req.file.originalname}`,
+  });
+});
 
 app.get("/", (req, res) => {
   res.json("Server is working");
