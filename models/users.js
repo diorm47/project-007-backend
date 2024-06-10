@@ -53,6 +53,11 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
+    grids: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
   },
   { timestamp: true }
 );

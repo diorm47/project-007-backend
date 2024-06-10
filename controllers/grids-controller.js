@@ -1,4 +1,5 @@
 import GridsModel from "../models/grids.js";
+import UserModel from "../models/users.js";
 
 export const getAll = async (req, res) => {
   try {
@@ -40,6 +41,13 @@ export const create = async (req, res) => {
     });
 
     const grid = await doc.save();
+
+    const user = await UserModel.findById(req.userId);
+    if (user) {
+      user.grids = (user.grids || 0) + 1;
+      await user.save();
+    }
+
     res.json(grid);
   } catch (err) {
     console.log(err);
